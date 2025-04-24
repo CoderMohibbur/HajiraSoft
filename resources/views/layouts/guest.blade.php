@@ -17,11 +17,32 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body>
-        <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
+    {{-- <body>
+
+
+        <div class="font-sans text-gray-900 antialiased">
+
             {{ $slot }}
         </div>
 
         @livewireScripts
+    </body> --}}
+
+    <body class="relative">
+
+        <!-- ✅ Include Fixed Navbar -->
+        @include('components.nav-menu')
+
+        <!-- ✅ Prevent content from hiding under navbar -->
+        <div class="pt-[100px] font-sans text-gray-900 antialiased">
+            {{ $slot }}
+        </div>
+
+        <!-- ✅ Include Footer from components -->
+        @include('components.footer')
+
+        @livewireScripts
+
     </body>
+
 </html>
