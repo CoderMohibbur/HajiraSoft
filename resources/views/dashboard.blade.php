@@ -131,24 +131,26 @@
     </div>
 </div>
 
-
 <!-- Board Announcements -->
-<div class="bg-gradient-to-br from-indigo-50 via-white to-indigo-100 shadow-2xl rounded-3xl p-10 border-l-[6px] border-indigo-500">
-    <div class="flex justify-between items-center mb-8">
-      <h3 class="text-3xl font-extrabold text-indigo-700 flex items-center gap-3 tracking-wide">
-        <svg class="w-7 h-7 text-indigo-500 animate-wiggle" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<div class="bg-gradient-to-br from-indigo-50 via-white to-indigo-100 shadow-2xl rounded-3xl p-5 sm:p-8 md:p-10 border-l-[6px] border-indigo-500">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-3">
+      <h3 class="text-2xl md:text-3xl font-extrabold text-indigo-700 flex items-center gap-3 tracking-wide">
+        <svg class="w-6 h-6 md:w-7 md:h-7 text-indigo-500 animate-wiggle" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856C18.07 18.67 20 15.962 20 13c0-3.866-3.582-7-8-7S4 9.134 4 13c0 2.962 1.93 5.67 4.062 7z" />
         </svg>
         Central Board Announcements
       </h3>
-      <span class="text-sm bg-indigo-600 text-white px-4 py-1.5 rounded-full shadow-lg animate-pulse">📣 Important from Board</span>
+      <span class="text-xs sm:text-sm bg-indigo-600 text-white px-4 py-1.5 rounded-full shadow-lg animate-pulse whitespace-nowrap">
+        📣 Important from Board
+      </span>
     </div>
 
-    <div class="space-y-6 text-indigo-900 text-[15px]">
+    <div class="space-y-6 text-indigo-900 text-sm sm:text-[15px]">
+
       <!-- Notice 1 -->
-      <div class="bg-white px-6 py-6 rounded-2xl border-l-4 border-indigo-500 shadow-md hover:shadow-xl transition flex flex-col gap-3">
-        <div class="flex items-start justify-between">
-          <div class="flex gap-4">
+      <div class="bg-white px-4 sm:px-6 py-5 sm:py-6 rounded-2xl border-l-4 border-indigo-500 shadow-md hover:shadow-xl transition flex flex-col gap-3">
+        <div class="flex flex-col sm:flex-row justify-between gap-3">
+          <div class="flex flex-wrap gap-3 items-start">
             <span class="text-xs font-bold text-indigo-800 bg-indigo-100 px-3 py-1 rounded-full uppercase tracking-wide">Important</span>
             <p><strong>07-Apr-2025:</strong> Biometric Setup Deadline — All institutes must comply by 15th.</p>
           </div>
@@ -160,9 +162,9 @@
       </div>
 
       <!-- Notice 2 -->
-      <div class="bg-white px-6 py-6 rounded-2xl border-l-4 border-indigo-400 shadow-md hover:shadow-xl transition flex flex-col gap-3">
-        <div class="flex items-start justify-between">
-          <div class="flex gap-4">
+      <div class="bg-white px-4 sm:px-6 py-5 sm:py-6 rounded-2xl border-l-4 border-indigo-400 shadow-md hover:shadow-xl transition flex flex-col gap-3">
+        <div class="flex flex-col sm:flex-row justify-between gap-3">
+          <div class="flex flex-wrap gap-3 items-start">
             <span class="text-xs font-bold text-indigo-800 bg-indigo-100 px-3 py-1 rounded-full uppercase tracking-wide">General</span>
             <p><strong>07-Apr-2025:</strong> Weekly Off Day Configuration Updated.</p>
           </div>
@@ -174,9 +176,9 @@
       </div>
 
       <!-- Notice 3 -->
-      <div class="bg-white px-6 py-6 rounded-2xl border-l-4 border-indigo-300 shadow-md hover:shadow-xl transition flex flex-col gap-3">
-        <div class="flex items-start justify-between">
-          <div class="flex gap-4">
+      <div class="bg-white px-4 sm:px-6 py-5 sm:py-6 rounded-2xl border-l-4 border-indigo-300 shadow-md hover:shadow-xl transition flex flex-col gap-3">
+        <div class="flex flex-col sm:flex-row justify-between gap-3">
+          <div class="flex flex-wrap gap-3 items-start">
             <span class="text-xs font-bold text-indigo-800 bg-indigo-100 px-3 py-1 rounded-full uppercase tracking-wide">Audit</span>
             <p><strong>03-Apr-2025:</strong> Midterm Audit Notice issued to all admins.</p>
           </div>
@@ -187,8 +189,11 @@
         </button>
       </div>
 
-      <div class="text-right pt-6">
-        <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-7 py-2.5 rounded-full shadow-lg">View All Notices</a>
+      <!-- View All -->
+      <div class="text-right pt-4 sm:pt-6">
+        <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-6 sm:px-7 py-2 rounded-full shadow-lg">
+          View All Notices
+        </a>
       </div>
     </div>
   </div>
@@ -202,6 +207,7 @@
     animation: wiggle 1.5s infinite;
   }
   </style>
+
 
 
         </div>

@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Admin\DistrictController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('employees', EmployeeController::class);
 
 Route::middleware([
     'auth:sanctum',
@@ -15,3 +18,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+// Route::middleware(['auth', 'role:super_admin'])->prefix('admin')->group(function () {
+//     Route::resource('districts', DistrictController::class);
+// });
+Route::resource('districts', DistrictController::class);
+Route::resource('employees', EmployeeController::class);
