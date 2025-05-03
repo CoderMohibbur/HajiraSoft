@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Admin\UpazilaController;
 use App\Http\Controllers\Admin\DistrictController;
+use App\Http\Controllers\Admin\MadrasahController;
+use App\Http\Controllers\Admin\LeaveTypeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,3 +26,7 @@ Route::middleware([
 // });
 Route::resource('districts', DistrictController::class);
 Route::resource('employees', EmployeeController::class);
+Route::resource('upazilas', UpazilaController::class);
+Route::resource('madrasahs', MadrasahController::class);
+// routes/web.php
+Route::resource('leave-types', LeaveTypeController::class);
