@@ -60,4 +60,9 @@ class Attendance extends Model
     {
         return $query->where('madrasah_id', $madrasahId);
     }
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }

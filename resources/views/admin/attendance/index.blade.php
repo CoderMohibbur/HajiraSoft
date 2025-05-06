@@ -13,7 +13,7 @@
                         <h1 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                             🗓️ Attendance Records
                         </h1>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">All recorded teacher attendances</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">All teacher attendance logs</p>
                     </div>
                 </div>
                 <a href="{{ route('attendances.create') }}"
@@ -38,14 +38,14 @@
                         <th class="px-4 py-3 text-left font-semibold">Remarks</th>
                         <th class="px-4 py-3 text-left font-semibold">Device</th>
                         <th class="px-4 py-3 text-center font-semibold">Verified</th>
-                        <th class="px-4 py-3 text-center font-semibold">Action</th>
+                        <th class="px-4 py-3 text-center font-semibold">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-700 text-gray-800 dark:text-gray-100">
                     @forelse($attendances as $attendance)
                         <tr class="hover:bg-gray-50 dark:hover:bg-gray-700 transition">
                             <td class="px-4 py-2">{{ $attendance->teacher->user->name ?? 'N/A' }}</td>
-                            <td class="px-4 py-2">{{ $attendance->date->format('d M Y') }}</td>
+                            <td class="px-4 py-2">{{ \Carbon\Carbon::parse($attendance->date)->format('d M, Y') }}</td>
                             <td class="px-4 py-2 text-center">
                                 @php
                                     $statusColors = [
@@ -70,15 +70,13 @@
                             </td>
                             <td class="px-4 py-2 text-center space-x-2">
                                 <a href="{{ route('attendances.edit', $attendance) }}"
-                                   class="text-blue-600 hover:text-blue-800 font-semibold text-sm">
-                                    ✏️ Edit
-                                </a>
-                                <form action="{{ route('attendances.destroy', $attendance) }}" method="POST" class="inline-block" onsubmit="return confirm('Are you sure to delete this record?');">
+                                   class="text-blue-600 hover:text-blue-800 font-semibold text-sm">✏️ Edit</a>
+                                <form action="{{ route('attendances.destroy', $attendance) }}" method="POST"
+                                      class="inline-block" onsubmit="return confirm('Are you sure?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-red-600 hover:text-red-800 font-semibold text-sm">
-                                        🗑️ Delete
-                                    </button>
+                                    <button type="submit"
+                                            class="text-red-600 hover:text-red-800 font-semibold text-sm">🗑️ Delete</button>
                                 </form>
                             </td>
                         </tr>
