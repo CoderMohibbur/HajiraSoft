@@ -13,6 +13,7 @@ class MadrasahController extends Controller
 {
     public function index()
     {
+        
         $madrasahs = Madrasah::with(['district', 'upazila'])->latest()->paginate(10);
         return view('admin.madrasahs.index', compact('madrasahs'));
     }
